@@ -1,3 +1,5 @@
+import About from '@/components/About';
+import BookingForm from '@/components/Booking-form';
 import FeaturedGuides from '@/components/Featured-Guides';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
@@ -11,6 +13,8 @@ export default function Home() {
       <Hero />
       <FeaturedGuides/>
       <PopularTours/>
+      <About/>
+      <BookingForm/>
       <Footer/>
     </main>
   );
