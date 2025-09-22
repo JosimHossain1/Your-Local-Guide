@@ -1,5 +1,6 @@
 import About from '@/components/About';
 import BookingForm from '@/components/Booking-form';
+import { FAQ } from '@/components/Faq';
 import FeaturedGuides from '@/components/Featured-Guides';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
@@ -17,6 +18,7 @@ export default function Home() {
       <About/>
       <BookingForm/>
       <Testimonials/>
+      <FAQ/>
       <Footer/>
     </main>
   );
