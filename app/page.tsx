@@ -1,4 +1,5 @@
 import FeaturedGuides from '@/components/Featured-Guides';
+import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Navigation from '@/components/navigation';
 
@@ -8,6 +9,7 @@ export default function Home() {
       <Navigation />
       <Hero />
       <FeaturedGuides/>
+      <Footer/>
     </main>
   );
 }
