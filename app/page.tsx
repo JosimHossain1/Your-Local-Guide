@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import Navigation from '@/components/navigation';
 import PopularTours from '@/components/Popular-Tour';
+import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <PopularTours/>
       <About/>
       <BookingForm/>
+      <Testimonials/>
       <Footer/>
     </main>
   );
