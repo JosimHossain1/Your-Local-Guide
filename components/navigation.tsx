@@ -1,20 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Moon, Sun, Menu, X, Globe } from 'lucide-react';
+import { Moon, Sun, Menu, X } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+
+import { Avatar, AvatarImage } from './ui/avatar';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [language, setLanguage] = useState('en');
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -24,6 +19,8 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const user = true;
 
   const navItems = [
     { href: '#guides', label: 'Find Guides' },
@@ -67,22 +64,7 @@ export default function Navigation() {
 
           {/* Theme Toggle & Language Selector */}
           <div className='hidden md:flex items-center space-x-4'>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant='outline' size='sm'>
-                  <Globe className='h-4 w-4 mr-2' />
-                  {language === 'en' ? 'EN' : 'বাং'}
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem onClick={() => setLanguage('en')}>
-                  English
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setLanguage('bn')}>
-                  বাংলা
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Button size='sm'>Become a Guide</Button>
 
             <Button
               variant='outline'
@@ -93,6 +75,17 @@ export default function Navigation() {
               <Moon className='absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100' />
               <span className='sr-only'>Toggle theme</span>
             </Button>
+
+            {user ? (
+              <Avatar>
+                <AvatarImage
+                  src='https://github.com/shadcn.png'
+                  alt='@shadcn'
+                />
+              </Avatar>
+            ) : (
+              <Button>Login</Button>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -126,22 +119,6 @@ export default function Navigation() {
                 </a>
               ))}
               <div className='flex items-center justify-between px-3 py-2'>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant='outline' size='sm'>
-                      <Globe className='h-4 w-4 mr-2' />
-                      {language === 'en' ? 'EN' : 'বাং'}
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    <DropdownMenuItem onClick={() => setLanguage('en')}>
-                      English
-                    </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setLanguage('bn')}>
-                      বাংলা
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
 
                 <Button
                   variant='outline'
