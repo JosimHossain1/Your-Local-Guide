@@ -3,7 +3,6 @@ import dbConnection from '@/lib/connectDB';
 import guideModel from '@/model/GuideModel';
 
 export async function GET(
-  req: NextRequest,
   { params }: { params: { id: string } },
 ) {
   await dbConnection();
@@ -43,7 +42,6 @@ export async function PUT(
 }
 
 export async function DELETE(
-  req: NextRequest,
   { params }: { params: { id: string } },
 ) {
   await dbConnection();

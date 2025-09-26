@@ -3,7 +3,7 @@ import guideModel from '@/model/GuideModel';
 import { NextRequest, NextResponse } from 'next/server';
 
 // GET all guides
-export async function GET(req: NextRequest) {
+export async function GET() {
   await dbConnection();
   try {
     const guides = await guideModel.find().populate('user');
@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
 }
 
 // POST new guide
-export async function POST(req: NextRequest) {
+export async function POST(req : NextRequest) {
   await dbConnection();
   try {
     const body = await req.json();

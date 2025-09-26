@@ -2,8 +2,7 @@ import dbConnection from '@/lib/connectDB';
 import userModel from '@/model/UserModel';
 import { NextRequest, NextResponse } from 'next/server';
 
-
-export async function GET(req: NextRequest) {
+export async function GET() {
   await dbConnection();
   try {
     const users = await userModel.find();
@@ -13,7 +12,7 @@ export async function GET(req: NextRequest) {
   }
 }
 
-export async function POST(req: NextRequest) {
+export async function POST(req:NextRequest) {
   await dbConnection();
   try {
     const body = await req.json();

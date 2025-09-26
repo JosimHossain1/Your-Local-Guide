@@ -1,7 +1,6 @@
 "use client";
-
-import GuideCard from "./GuideCard";
-import { Button } from "./ui/button";
+import { Button } from '@/components/ui/button';
+import GuideCard from '@/components/GuideCard';
 
 const guides = [
   {

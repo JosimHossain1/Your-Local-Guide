@@ -6,6 +6,7 @@ import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 
 import { Avatar, AvatarImage } from './ui/avatar';
+import Link from 'next/link';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,7 +24,7 @@ export default function Navigation() {
   const user = true;
 
   const navItems = [
-    { href: '#guides', label: 'Find Guides' },
+    { href: '/guides', label: 'Find Guides' },
     { href: '#tours', label: 'Popular Tours' },
     { href: '#about', label: 'About' },
     { href: '#booking', label: 'Book Now' },
@@ -42,9 +43,9 @@ export default function Navigation() {
         <div className='flex justify-between items-center h-16'>
           {/* Logo */}
           <div className='flex-shrink-0'>
-            <h1 className='text-2xl font-bold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent'>
+            <Link href='/' className='text-2xl font-bold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent'>
               Your Local Guide
-            </h1>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}

@@ -1,8 +1,8 @@
 import dbConnection from "@/lib/connectDB";
 import bookingModel from "@/model/BookingModel";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   await dbConnection();
   try {
     const bookings = await bookingModel.find().populate("tour").populate("tourist");
@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
   }
 }
 
-export async function POST(req: NextRequest) {
+export async function POST() {
   await dbConnection();
   try {
     const body = await req.json();

@@ -2,10 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import dbConnection from '@/lib/connectDB';
 import bookingModel from '@/model/BookingModel';
 
-export async function GET(
-  req: NextRequest,
-  { params }: { params: { id: string } },
-) {
+export async function GET({ params }: { params: { id: string } }) {
   await dbConnection();
   try {
     const booking = await bookingModel

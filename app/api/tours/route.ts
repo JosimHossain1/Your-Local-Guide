@@ -1,9 +1,8 @@
 import dbConnection from '@/lib/connectDB';
 import tourModel from '@/model/TourModel';
-import { NextRequest, NextResponse } from 'next/server';
+import {NextRequest, NextResponse } from 'next/server';
 
-
-export async function GET(req: NextRequest) {
+export async function GET() {
   await dbConnection();
   try {
     const tours = await tourModel.find().populate('guide');
@@ -13,7 +12,7 @@ export async function GET(req: NextRequest) {
   }
 }
 
-export async function POST(req: NextRequest) {
+export async function POST(req : NextRequest) {
   await dbConnection();
   try {
     const body = await req.json();

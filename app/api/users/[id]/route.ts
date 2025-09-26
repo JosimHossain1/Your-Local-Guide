@@ -2,7 +2,7 @@ import dbConnection from "@/lib/connectDB";
 import userModel from "@/model/UserModel";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(  { params }: { params: { id: string } }) {
   await dbConnection();
   try {
     const user = await userModel.findById(params.id);
@@ -13,7 +13,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
   }
 }
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(req : NextRequest , { params }: { params: { id: string } }) {
   await dbConnection();
   try {
     const body = await req.json();
@@ -25,7 +25,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
   }
 }
 
-export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE({ params }: { params: { id: string } }) {
   await dbConnection();
   try {
     const deleted = await userModel.findByIdAndDelete(params.id);
