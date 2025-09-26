@@ -1,6 +1,6 @@
 import dbConnection from "@/lib/connectDB";
 import bookingModel from "@/model/BookingModel";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
   await dbConnection();
@@ -12,7 +12,7 @@ export async function GET() {
   }
 }
 
-export async function POST() {
+export async function POST(req : NextRequest) {
   await dbConnection();
   try {
     const body = await req.json();

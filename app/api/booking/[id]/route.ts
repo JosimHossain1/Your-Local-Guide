@@ -42,10 +42,7 @@ export async function PUT(
   }
 }
 
-export async function DELETE(
-  req: NextRequest,
-  { params }: { params: { id: string } },
-) {
+export async function DELETE({ params }: { params: { id: string } }) {
   await dbConnection();
   try {
     const deleted = await bookingModel.findByIdAndDelete(params.id);

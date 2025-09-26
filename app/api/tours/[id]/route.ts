@@ -3,7 +3,7 @@ import dbConnection from '@/lib/connectDB';
 import tourModel from '@/model/TourModel';
 
 export async function GET(
-  { params }: { params: { id: string } },
+  { params }: { params: { id: string } }
 ) {
   await dbConnection();
   try {
@@ -21,7 +21,7 @@ export async function GET(
 
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } },
+  { params }: { params: { id: string } }
 ) {
   await dbConnection();
   try {
@@ -42,7 +42,7 @@ export async function PUT(
 }
 
 export async function DELETE(
-  { params }: { params: { id: string } },
+  { params }: { params: { id: string } }
 ) {
   await dbConnection();
   try {

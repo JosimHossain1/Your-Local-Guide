@@ -2,9 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import dbConnection from '@/lib/connectDB';
 import guideModel from '@/model/GuideModel';
 
-export async function GET(
-  { params }: { params: { id: string } },
-) {
+export async function GET({ params }: { params: { id: string } }) {
   await dbConnection();
   try {
     const guide = await guideModel.findById(params.id).populate('user');
@@ -41,9 +39,7 @@ export async function PUT(
   }
 }
 
-export async function DELETE(
-  { params }: { params: { id: string } },
-) {
+export async function DELETE({ params }: { params: { id: string } }) {
   await dbConnection();
   try {
     const deleted = await guideModel.findByIdAndDelete(params.id);
