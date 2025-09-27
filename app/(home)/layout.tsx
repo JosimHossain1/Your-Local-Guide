@@ -1,14 +1,14 @@
-import '../globals.css'
+import '../globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
 import Navigation from '@/components/navigation';
 import Footer from '@/components/Footer';
+import { ThemeProvider } from '@/components/theme-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Local Wanderer - Authentic Local Tours & Cultural Experiences',
+  title: 'Local Tour Guide - Authentic Local Tours & Cultural Experiences',
   description:
     'Connect with passionate local guides and discover authentic cultural experiences. Support local communities while exploring hidden gems.',
   keywords:
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang='en'>
       <body className={inter.className}>
         <ThemeProvider
           attribute='class'
@@ -32,7 +32,7 @@ export default function RootLayout({
           <Navigation />
 
           {children}
-          <Footer/>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
