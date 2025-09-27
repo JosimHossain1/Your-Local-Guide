@@ -43,7 +43,10 @@ export default function Navigation() {
         <div className='flex justify-between items-center h-16'>
           {/* Logo */}
           <div className='flex-shrink-0'>
-            <Link href='/' className='text-2xl font-bold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent'>
+            <Link
+              href='/'
+              className='text-2xl font-bold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent'
+            >
               Your Local Guide
             </Link>
           </div>
@@ -65,7 +68,10 @@ export default function Navigation() {
 
           {/* Theme Toggle & Language Selector */}
           <div className='hidden md:flex items-center space-x-4'>
-            <Button size='sm'>Become a Guide</Button>
+            <Link href='/become-guide'>
+            
+              <Button size='sm'>Become a Guide</Button>
+            </Link>
 
             <Button
               variant='outline'
@@ -78,12 +84,13 @@ export default function Navigation() {
             </Button>
 
             {user ? (
-              <Avatar>
-                <AvatarImage
-                  src='https://github.com/shadcn.png'
-                  alt='@shadcn'
-                />
-              </Avatar>
+               <Link href='/dashboard'><Button>Dashboard</Button></Link>
+              // <Avatar>
+              //   <AvatarImage
+              //     src='https://github.com/shadcn.png'
+              //     alt='@shadcn'
+              //   />
+              // </Avatar>
             ) : (
               <Button>Login</Button>
             )}
@@ -120,7 +127,6 @@ export default function Navigation() {
                 </a>
               ))}
               <div className='flex items-center justify-between px-3 py-2'>
-
                 <Button
                   variant='outline'
                   size='sm'
