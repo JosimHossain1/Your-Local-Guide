@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/theme-provider.jsx", "app/api/booking/[id]/route.js", "app/api/guides/[id]/route.js", "app/api/tours/[id]/route.js", "app/api/users/[id]/route.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/theme-provider.jsx", "app/api/booking/[id]/route.js", "app/api/guides/[id]/route.js", "app/api/tours/[id]/route.js", "app/api/users/[id]/route.js", "components/GuideCard.jsx"],
   "exclude": ["node_modules"]
 }

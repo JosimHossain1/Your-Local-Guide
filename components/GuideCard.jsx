@@ -6,11 +6,11 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import Link from 'next/link';
 
-const GuideCard = ({ guide }: { guide: (typeof guides)[0] }) => {
+const GuideCard = ({ guide }) => {
   return (
     <Card className='group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden relative'>
       <CardContent className='p-0'>
-        <div className=''>
+        <div>
           <Avatar className='w-full h-52 rounded-none'>
             <AvatarImage
               src={guide.image}
